@@ -49,7 +49,7 @@ void loop() {
     }
     
     Serial.println(current_temp);
-    delay(1500);
+    delay(1244);
   }
   average = total / 16;
   jsonMsg = jsonMsg + average + jsonTemps + "]}";
