@@ -25,7 +25,6 @@ unsigned long temp_time;
 
 void setup() {
   start_time = millis();
-  Serial.begin(115200);
   ddev.connect();
   delay(1000);
 
@@ -46,13 +45,11 @@ void setup() {
   
   average = total / 16;
   jsonMsg = jsonMsg + average + jsonTemps + "]}";
-  Serial.println("Sending Data");
   ddev.sendJSON(jsonMsg);
 
-  Serial.println("Going to sleep");
-  Serial.println(millis());
+  delay(1000);
+  
   unsigned long sleep_time = (30000 - (millis()-start_time))*1000;
-  Serial.println(sleep_time);
   esp_sleep_enable_timer_wakeup(sleep_time);
   esp_deep_sleep_start();
 }
