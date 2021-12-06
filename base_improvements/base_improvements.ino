@@ -50,7 +50,7 @@ void loop() {
   temp_time = millis() - start_time;
   total += current_temp;
   jsonTemps = jsonTemps + "{\"timestamp\": " + temp_time + ", \"value\": " + current_temp + "}";
-
+  delay(1500);
   
   average = total / 16;
   jsonMsg = jsonMsg + average + jsonTemps + "]}";
