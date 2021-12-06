@@ -66,13 +66,9 @@ inline uint16_t floatToFixed(double input)
 }
 
 void setup() {
-  Serial.begin(115200);
-  ddev.connect();
-}
-
-void loop() {
   start_time = millis();
-  total = 0;
+  ddev.connect();
+
   
   struct tempStruct message;
 
@@ -211,6 +207,11 @@ void loop() {
   message.avg = (uint16_t) floatToFixed(average);
   ddev.sendBIN((char *)&message, sizeof(tempStruct));
 
-  unsigned long delay_time = (30000 - (millis()-start_time));
-  delay(delay_time);
+  delay(1000);
+
+  unsigned long sleep_time = ((30000 - (millis()-start_time))*1000);
+  esp_sleep_enable_timer_wakeup(sleep_time);
+  esp_deep_sleep_start();
 }
+
+void loop() {}
