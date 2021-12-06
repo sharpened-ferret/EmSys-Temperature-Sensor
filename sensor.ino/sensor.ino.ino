@@ -7,9 +7,9 @@
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
-const char* ssid = "NETGEAR35";
-const char* password = "magicalfinch482";
-const char* server = "ws://192.168.1.2:1234"; 
+const char* ssid = "STINKnet2400";
+const char* password = "milkfast923";
+const char* server = "ws://ec2-52-15-138-171.us-east-2.compute.amazonaws.com:1234"; 
 const char* gid = "cag05ijt";
 
 dotDevice ddev(ssid, password, server);
