@@ -15,44 +15,46 @@ const char* gid = "cag05ijt";
 dotDevice ddev(ssid, password, server);
 
 float temp_in_c;
-
-String jsonMsg;
-String jsonTemps;
-float total;
+String jsonMsg = "{\"device\": \"cag05ijt\", \"average\":";
+String jsonTemps = ", \"values\":[";
+float total = 0;
 float average;
 float current_temp;
 unsigned long start_time;
 unsigned long temp_time;
 
 void setup() {
-  ddev.connect();
-}
-
-
-//Removed serial printouts and eliminated if statement
-void loop() {
-  total = 0;
   start_time = millis();
-  jsonMsg = "{\"device\": \"cag05ijt\", \"average\":";
-  jsonTemps = ", \"values\":["; 
-  
-  
+  Serial.begin(115200);
+  ddev.connect();
+  delay(1000);
+
   for (int i = 0; i < 15; i++) {
     sensors.requestTemperatures();
     current_temp = sensors.getTempCByIndex(0);
     temp_time = millis() - start_time;
     total += current_temp;
     jsonTemps = jsonTemps + "{\"timestamp\": " + temp_time + ", \"value\": " + current_temp + "},";
-    delay(1244);
+
   }
   sensors.requestTemperatures();
   current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   jsonTemps = jsonTemps + "{\"timestamp\": " + temp_time + ", \"value\": " + current_temp + "}";
-  delay(1500);
+ 
   
   average = total / 16;
   jsonMsg = jsonMsg + average + jsonTemps + "]}";
+  Serial.println("Sending Data");
   ddev.sendJSON(jsonMsg);
+
+  Serial.println("Going to sleep");
+  Serial.println(millis());
+  unsigned long sleep_time = (30000 - (millis()-start_time))*1000;
+  Serial.println(sleep_time);
+  esp_sleep_enable_timer_wakeup(sleep_time);
+  esp_deep_sleep_start();
 }
+
+void loop() {}
