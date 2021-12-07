@@ -1,0 +1,2 @@
+Average current draw = 10.29 mA
+Total Energy consumption (100s) = 3397.33 mJ
