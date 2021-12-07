@@ -76,131 +76,131 @@ void setup() {
   message.cmd = testVal;
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time0 = (uint16_t) temp_time;
-  message.value0 = current_temp;
+  message.value0 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time1 = (uint16_t) temp_time;
-  message.value1 = current_temp;
+  message.value1 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time2 = (uint16_t) temp_time;
-  message.value2 = current_temp;
+  message.value2 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time3 = (uint16_t) temp_time;
-  message.value3 = current_temp;
+  message.value3 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time4 = (uint16_t) temp_time;
-  message.value4 = current_temp;
+  message.value4 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time5 = (uint16_t) temp_time;
-  message.value5 = current_temp;
+  message.value5 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time6 = (uint16_t) temp_time;
-  message.value6 = current_temp;
+  message.value6 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time7 = (uint16_t) temp_time;
-  message.value7 = current_temp;
+  message.value7 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time8 = (uint16_t) temp_time;
-  message.value8 = current_temp;
+  message.value8 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time9 = (uint16_t) temp_time;
-  message.value9 = current_temp;
+  message.value9 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time10 = (uint16_t) temp_time;
-  message.value10 = current_temp;
+  message.value10 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time11 = (uint16_t) temp_time;
-  message.value11 = current_temp;
+  message.value11 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time12 = (uint16_t) temp_time;
-  message.value12 = current_temp;
+  message.value12 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time13 = (uint16_t) temp_time;
-  message.value13 = current_temp;
+  message.value13 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time14 = (uint16_t) temp_time;
-  message.value14 = current_temp;
+  message.value14 = floatToFixed(current_temp);
 
   
   sensors.requestTemperatures();
-  current_temp = floatToFixed(sensors.getTempCByIndex(0));
+  current_temp = sensors.getTempCByIndex(0);
   temp_time = millis() - start_time;
   total += current_temp;
   message.time15 = (uint16_t) temp_time;
-  message.value15 = current_temp;
+  message.value15 = floatToFixed(current_temp);
   
   average = total / 16;
 
